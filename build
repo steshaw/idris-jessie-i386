@@ -1,0 +1,74 @@
+#!/usr/bin/env bash
+
+set -eu
+
+tag="$1"
+version="${tag#v}" # strip the 'v' prefix.
+
+echo "version = ${version}"
+
+#
+# Clone idris at tag.
+#
+
+git clone https://github.com/idris-lang/Idris-dev.git idris || true
+cd idris
+git checkout ${tag}
+
+arch=$(dpkg --print-architecture)
+pkgDir="idris-${version}"
+pkgName="idris-${version}-${arch}"
+dest=/tmp/${pkgDir}
+prefix=/opt/${pkgDir}
+
+#
+# Build Idris.
+#
+# See https://www.haskell.org/cabal/users-guide/installing-packages.html#creating-a-binary-package
+#
+
+cabalFlags='-f ffi -f gmp'
+cabal update
+cabal install ${cabalFlags} --dependencies-only
+cabal configure ${cabalFlags} --prefix=${prefix}
+cabal build
+cabal copy --destdir=${dest}
+
+cd ..
+
+#
+# Build tarball.
+#
+
+tarball="${pkgName}.tar.gz"
+tar -C ${dest}/opt -czf ${tarball} ${pkgDir}
+
+#
+# Build .deb.
+#
+# See https://linuxconfig.org/easy-way-to-create-a-debian-package-and-local-package-repository#h2-creating-a-debian-package
+#
+
+debDir=${dest}/DEBIAN
+mkdir ${debDir}
+cat >> ${debDir}/control <<!
+Package: idris
+Version: $version
+Depends: libffi6, libgmp10
+Section: devel
+Priority: optional
+Architecture: ${arch}
+Essential: no
+Installed-Size: 267544
+Maintainer: Steven Shaw <steven@steshaw.org>
+Description: Idris is a general purpose language with full dependent types.
+!
+
+dpkg-deb --build ${dest}
+deb=${pkgName}.deb
+mv ${dest}.deb ${deb}
+
+#
+# Change permissions as Travis seems to not have permission to upload these.
+#
+chmod 777 ${deb} ${tarball}

@@ -1,0 +1,4 @@
+* Idris Debian Jessie builds
+
+#+ATTR_HTML: title: "Build Status"
+[[https://travis-ci.org/steshaw/idris-jessie][https://travis-ci.org/steshaw/idris-jessie.svg?branch=master]]

@@ -1,0 +1,6 @@
+.cabal
+.ghc
+idris
+*.tar.gz
+*.tar.xz
+*.deb

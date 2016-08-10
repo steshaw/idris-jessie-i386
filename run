@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -eu
+
+version="${1:-v0.12.2}"
+echo "version = ${version}"
+
+docker run \
+    --env 'HOME=/work' \
+    --volume="$(pwd):/work" \
+    steshaw/ghc:jessie-ghc-7.10.3 \
+    ./build "${version}"
+
+echo -------------------------------------------------------
+echo "TRAVIS_BUILD_DIR=${TRAVIS_BUILD_DIR:-}"
+echo "CWD=$(pwd)"
+echo ls
+ls
+echo -------------------------------------------------------
