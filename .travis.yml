@@ -19,5 +19,7 @@ deploy:
   file:
     - idris-0.12.2-i386.deb
     - idris-0.12.2-i386.tar.gz
+  on:
+    tags: true
   api_key:
     secure: A6sbEosNLWa/eU2w0KNrrwwuOFywYHyC5J1tEnyjLyMnVse9eY+kVoUyKLaU4x7YnRloCvM0HcUqhUwbKQcQJNDGMk2sIQOQSuNNZ4VOCkgFsia1skruOjANwcAjQqc05JX7CDqW6ou+HMa8T8YaNh4sRWqdVfzEpiK6lyplNCcxpSRldz4xTSbe3Ty7DOxk9HvevuXYuKr4Hzpoq5K2ilybwmDpVfMycKTwoafrTt15SufdX16JdCC2bKO28MqZeswgYmIRo94Bo4XcSncBnggTTdmcNo1giNbaQnzJGkfy3hue1JUaf+eMCjHR2w27TYYbh22tq31wG3NNmsmx8qMgIGqhkgpbmI4DSUvjZuv6MzblbtPP5gQM35dMB6UXWRDQQGX56nGXCAPv69mE5ZbDn2D0e7pW4uELk8o0v+CQvyy3FzM3sSZSP4Pu/38ui+W4Q/MH+2mSj+4cs4LzZxsgDW8imsy3/zSVnVIzo1AV1qCQubhTUtWEOGvaCzzEOj24AOoZK6XMInVqjQbZJ2t6TpMrAFoKqs3TA+ZMSf0L3J049UzR0LsgVEe/9V6CJ6h/289N2EyHXMWne45J50ZKjpYvLBAcdzewIvo6T3luJ8KbgX8YA4IvmNCfpsrqjqtTq4cIBNaMMFEZATpw3VtnJC7lZGnyir3m7BeFP3U=
