@@ -1,4 +1,6 @@
-* Idris Debian Jessie builds
+* idris-jessie-8386
+
+Idris binary packaging for Debian jessie i386.
 
 #+ATTR_HTML: title: "Build Status"
-[[https://travis-ci.org/steshaw/idris-jessie][https://travis-ci.org/steshaw/idris-jessie.svg?branch=master]]
+[[https://travis-ci.org/steshaw/idris-jessie-i386][https://travis-ci.org/steshaw/idris-jessie-i386.svg?branch=master]]
