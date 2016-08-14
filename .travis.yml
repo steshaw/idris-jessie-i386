@@ -17,8 +17,8 @@ deploy:
   provider: releases
   skip_cleanup: true
   file:
-    - idris-0.12.2-i386.deb
-    - idris-0.12.2-i386.tar.gz
+    - idris-${TRAVIS_TAG#v}-i386.deb
+    - idris-${TRAVIS_TAG#v}-i386.tar.gz
   on:
     tags: true
   api_key:
