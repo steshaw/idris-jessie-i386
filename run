@@ -8,5 +8,5 @@ echo "version = ${version}"
 docker run \
     --env 'HOME=/work' \
     --volume="$(pwd):/work" \
-    steshaw/ghc:jessie-ghc-7.10.3 \
+    steshaw/ghc:jessie-i386-ghc-7.10.3 \
     ./build "${version}"
