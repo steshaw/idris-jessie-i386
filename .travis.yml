@@ -4,8 +4,8 @@ language: sh
 
 cache:
   directories:
-    - $HOME/.ghc
-    - $HOME/.cabal
+    - "$HOME/.ghc"
+    - "$HOME/.cabal"
 
 services:
   - docker
@@ -17,9 +17,7 @@ deploy:
   provider: releases
   skip_cleanup: true
   file:
-    - idris-${TRAVIS_TAG#v}-amd64.tar.gz
-    - idris-${TRAVIS_TAG#v}-amd64.deb
-  on:
-    tags: true
+    - idris-0.12.2-i386.deb
+    - idris-0.12.2-i386.tar.gz
   api_key:
-    secure: E7iF2q+BPDKulZJXCE/EJDR8Wpzyn+aUl5Q6xulgZv8siOfi7s/gY6rLxgsEQHhBxX/V1/aXnBVaol9hlIng1P0sNTuWBAY1ZClXIDTb/tE42t9Wb3tP/bgbEYqoVbOq3uI1ZOZMMTfZpKJfcqCegtU5pYKWbYKK6pGRaHXtI9C0dPz89EqIO7YQJlzefvc7bJ/aLm64So6Z2yK2vkr905tZexC/K1rdbZEtzhNCHIe6ol52TNm1MPw/m38s2hqh9qql9gwJvzd23Y7A3EsImLclO4Eo9vBYIwHKeezs1F1jvHPqSQ8/Q43cpvbJVzK/N+SRhVcD9wbawhZ6BnKGDGL/OWfLwMyONDeEpKgGICKpAxpPucJyRZb7SoknKGIbf/y3jVDcdRRDVF6EeRoQuDRxmdTotGSWH/6kyGgRpw5vf0zcpIiCrFUxxjiZ7ECQcBWzsNn1BeEJxM6jQASBmzK/LPg6EhNXWKEm5J96KB+WJi71LrLy5Zd7Pj2iOtQGFkkuLr+KH/fyiEoImaGQ69socKoiOXvlyLpmVjFsKz5Gf9uTo91n5uVXGhGjOkny6UgcJPNPmWLmTE0jnolafML+6vb4mjJ16445sDX1yrCtY5trdELqYuiuF3BwIAMfzlBBB8QJTBvfCo6o3/9O62TQNFXcQQ3xXuf/OLQYnBM=
+    secure: A6sbEosNLWa/eU2w0KNrrwwuOFywYHyC5J1tEnyjLyMnVse9eY+kVoUyKLaU4x7YnRloCvM0HcUqhUwbKQcQJNDGMk2sIQOQSuNNZ4VOCkgFsia1skruOjANwcAjQqc05JX7CDqW6ou+HMa8T8YaNh4sRWqdVfzEpiK6lyplNCcxpSRldz4xTSbe3Ty7DOxk9HvevuXYuKr4Hzpoq5K2ilybwmDpVfMycKTwoafrTt15SufdX16JdCC2bKO28MqZeswgYmIRo94Bo4XcSncBnggTTdmcNo1giNbaQnzJGkfy3hue1JUaf+eMCjHR2w27TYYbh22tq31wG3NNmsmx8qMgIGqhkgpbmI4DSUvjZuv6MzblbtPP5gQM35dMB6UXWRDQQGX56nGXCAPv69mE5ZbDn2D0e7pW4uELk8o0v+CQvyy3FzM3sSZSP4Pu/38ui+W4Q/MH+2mSj+4cs4LzZxsgDW8imsy3/zSVnVIzo1AV1qCQubhTUtWEOGvaCzzEOj24AOoZK6XMInVqjQbZJ2t6TpMrAFoKqs3TA+ZMSf0L3J049UzR0LsgVEe/9V6CJ6h/289N2EyHXMWne45J50ZKjpYvLBAcdzewIvo6T3luJ8KbgX8YA4IvmNCfpsrqjqtTq4cIBNaMMFEZATpw3VtnJC7lZGnyir3m7BeFP3U=
