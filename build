@@ -27,7 +27,7 @@ prefix=/opt/${pkgDir}
 # See https://www.haskell.org/cabal/users-guide/installing-packages.html#creating-a-binary-package
 #
 
-cabalFlags='-f ffi -f gmp'
+cabalFlags='-f ffi -f gmp -f release'
 cabal update
 cabal install ${cabalFlags} --dependencies-only
 cabal configure ${cabalFlags} --prefix=${prefix}
